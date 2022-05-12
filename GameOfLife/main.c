@@ -28,3 +28,9 @@ SDL_Rect getWindowsSize()
 
 	return s;
 }
+void initData()
+{
+	memset(map, 0, X_CNT * Y_CNT * sizeof(int));
+	initDensity(DEF_DENSITY);
+	lasttime = SDL_GetTicks();
+}
