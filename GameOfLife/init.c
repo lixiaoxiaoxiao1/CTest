@@ -27,9 +27,16 @@ int main(int argc, char *argv[])
 	IMG_Init(IMG_INIT_PNG);
 
 	winSize = getWindowsSize();
-	//initData();
+	initData();
 
 	//Initialize square
+	halscreen = SDL_SetVideoMode(winSize.w, winSize.h, 0, 0);
+	buffer_screen = SDL_CreateRGBSurface(0, winSize.w, winSize.h, _VIDEO_BPP, 0x00ff0000, 0x0000ff00, 0x000000ff, 0);
+	SDL_Rect rect;
+	rect.x = 0;
+	rect.y = 0;
+	rect.w = winSize.w;
+	rect.h = winSize.h;
 		//Draw  square
 
 	//Life reproduction
