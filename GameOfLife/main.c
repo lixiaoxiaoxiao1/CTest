@@ -71,7 +71,59 @@ void initData()
 	initDensity(DEF_DENSITY);
 	lasttime = SDL_GetTicks();
 }
+void refStatus()
+{
+	int i, j, s;
+	int u, d, l, r, ul, ur, dl, dr;
+	int b[X_CNT][Y_CNT];
+	for (i = 0; i < X_CNT; i++)
+	{
+		for (j = 0; j < Y_CNT; j++)
+		{
+			b[i][j] = map[i][j];
+		}
+	}
 
+	for (i = 1; i < X_CNT - 1; i++)
+	{
+		for (j = 1; j < Y_CNT - 1; j++)
+		{
+			u = b[i - 1][j];
+			d = b[i + 1][j];
+			l = b[i][j - 1];
+			r = b[i][j + 1];
+			ul = b[i - 1][j - 1];
+			ur = b[i - 1][j + 1];
+			dl = b[i + 1][j - 1];
+			dr = b[i + 1][j + 1];
+			s = u + d + l + r + ul + ur + dl + dr;
+
+			//¹æÔò
+			if (b[i][j] == 1)
+			{
+				if (s == 2 || s == 3)
+				{
+					map[i][j] = 1;
+				}
+				else
+				{
+					map[i][j] = 0;
+				}
+			}
+			else
+			{
+				if (s == 3)
+				{
+					map[i][j] = 1;
+				}
+				else
+				{
+					map[i][j] = 0;
+				}
+			}
+		}
+	}
+}
 //Draw The Info
 void draw(SDL_Surface* screen)
 {
