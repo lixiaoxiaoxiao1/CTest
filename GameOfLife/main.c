@@ -128,6 +128,7 @@ void refStatus()
 void draw(SDL_Surface* screen)
 {
 
+
 	int i, j;
 	for (i = 0; i < X_CNT; i++)
 	{
@@ -153,6 +154,8 @@ void draw(SDL_Surface* screen)
 	{
 		SDL_drawLine(0, j * GRID_SIZE, WINDOW_WIDTH, j * GRID_SIZE, toColor32(0, 0, 255));
 	}
+
+
 
 	Uint32 now = SDL_GetTicks();
 	if (now - lasttime >= REF_DELAY)
