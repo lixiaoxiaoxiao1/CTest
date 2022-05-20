@@ -91,3 +91,7 @@ GameOfLife/platform/win32/include/zlib.h
 GameOfLife/platform/win32/lib/SDL.lib
 GameOfLife/platform/win32/lib/SDL_image.lib
 GameOfLife/platform/win32/lib/SDLmain.lib
+GameOfLife/Debug/GameOfLife.exe.recipe
+GameOfLife/Debug/GameOfLife.ilk
+GameOfLife/Debug/vc143.idb
+GameOfLife/Debug/vc143.pdb
